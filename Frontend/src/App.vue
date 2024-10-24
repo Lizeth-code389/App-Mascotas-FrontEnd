@@ -1,11 +1,13 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
 import router from './router';
+import cargos from './components/cargos.vue';
 </script>
 
 <template>
  
-<router-view> </router-view>
+
+<router-view> Hola Rurito </router-view>
 
 
 </template>
