@@ -1,6 +1,8 @@
 <template>
     <el-menu
       :default-active="activeIndex"
+      background-color="#16161a"
+      text-color="#fff"
       class="el-menu-demo"
       mode="horizontal"
       :ellipsis="false"
@@ -32,13 +34,17 @@
   }
   </script>
   
-  <style>
-  .el-menu--horizontal > .el-menu-item:nth-child(1) {
-    margin-right: auto;
-  }
-  </style>
-  
+  <style scoped>
+  .el-menu-demo{
+    top: 0;
+    width: 100%;
+    z-index: 10;
+ }
 
-<style>
-/* estilos css*/
-</style>
+ .el-menu-item, 
+span.el-avatar.el-avatar--circle {
+  margin-right: auto;
+  padding: 0;
+}
+  
+  </style>

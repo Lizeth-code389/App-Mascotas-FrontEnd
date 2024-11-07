@@ -1,26 +1,27 @@
 <script setup>
 
-import NavBar from './NavBar.vue'
+import NavBar from './NavBar.vue';
 
-import SideBarMenu from './SideBarMenu.vue'
+import SideBarMenu from './SideBarMenu.vue';
 
 </script>
 
 
 
 <template>
-    <el-container>
+    <el-container style="height: 100vh;">
         <el-header>
            <NavBar />
         </el-header>
 
         <el-container>
-        <el-aside>
+        <el-aside width="250px">
             <SideBarMenu />
-        </el-aside>   
+        </el-aside >   
         
         <el-main>
-            main
+           <!-- aca debe estar el slot del layout -->
+            <slot name="slotLayout"></slot>
         </el-main>
         
     </el-container>
