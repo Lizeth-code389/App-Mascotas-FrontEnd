@@ -1,7 +1,8 @@
 import { createRouter,createWebHistory} from "vue-router";
-import Paises from '../views/paises/paises.vue'
 import { defineComponent } from "vue";
 import Ejemplo from "../views/ejemplo.vue";
+import Paises from '../views/paises/paises.vue';
+import Cargos from '../views/cargos/cargos.vue'
 import LayoutMain from "../components/LayoutMain.vue";
 import Login from "../components/Login.vue";
 
@@ -24,10 +25,9 @@ const routes = [
 
 
     {
-        path:'/car',
-        name:'Cargos, ejemplo',
-        component:Ejemplo,
-
+        path:'/cargos',
+        name:'Cargos',
+        component: Cargos,
     },
 
     {   
