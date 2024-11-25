@@ -15,36 +15,34 @@ import SideBarMenu from './SideBarMenu.vue';
         </el-header>
 
         <el-container>
-        <el-aside width="250px">
+        <el-aside width="auto">
             <SideBarMenu />
         </el-aside >   
         
-        <el-main>
+        <el-main class="main-content">
            <!-- aca debe estar el slot del layout -->
             <slot name="slotLayout"></slot>
         </el-main>
         
     </el-container>
 
-
     </el-container>
     
-
-
   </template>
-  
 
 
-<style lang="css">
-/* estilos css*/
-.el-header{
-    padding:0px;
-    height:auto;
-
-
+<style scoped>
+.el-header {
+  padding: 0;
 }
 
-.el-container{
-    flex:1;
+.el-aside {
+  background-color: #f4f4f4;
+}
+
+.main-content {
+  position: relative;
 }
 </style>
+  
+
