@@ -15,7 +15,7 @@ import SideBarMenu from './SideBarMenu.vue';
         </el-header>
 
         <el-container>
-        <el-aside width="auto">
+        <el-aside width="250 px">
             <SideBarMenu />
         </el-aside >   
         

@@ -1,10 +1,10 @@
 <template>
     <LayoutMain>
         <template #slotLayout>
-            <Header :titulo="'Cargos'" :tituloBoton="'Crear Cargo  +" :abrir="abrirFormulario" />
+            <Header :titulo="'Cargos'" :tituloBoton="'Crear Cargo  +'" :abrir="abrirFormulario" />
 
 
-            <Formulario :titulo="'Gestion de Cargos'" v-model:is-open="mostrarFormulario" :is-edit="editandoFormulario"
+              <Formulario :titulo="'Gestión de Cargos'" v-model:is-open="mostrarFormulario" :is-edit="editandoFormulario"
                 @save="guardarDatos" @update="actualizarDatos">
                 <template #slotForm>
                     <el-row :gutter="20">
@@ -45,7 +45,7 @@ import LayoutMain from '../../components/LayoutMain.vue';
 import Formulario from '../../components/Formulario.vue';
 import Header from '../../components/Header.vue';
 import { Delete, Edit } from "@element-plus/icons-vue"
-import FormCargos from './components/formCargos.vue';
+import FormCargos from './componentes/formCargos.vue';
 import { ElMessage, ElMessageBox } from 'element-plus'
 import axios from 'axios';
 
