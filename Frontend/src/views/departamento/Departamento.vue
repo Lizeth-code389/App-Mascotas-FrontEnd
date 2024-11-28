@@ -1,19 +1,19 @@
 <template>
-    <h1>Modulo de paises</h1>
+
     <LayoutMain>
     <template #slotLayout>
       <Header 
-      :titulo="'Paises'"
-      :tituloBoton="'Crear Pais'"
+      :titulo="'Departamento'"
+      :tituloBoton="'Crear Departamento'"
       :abrir="abrirFormulario"
       />
       
 
-      <Formulario :titulo="'Gestion de Paises'" v-model:is-open="mostrarFormulario" :is-edit="editandoFormulario"  >
+      <Formulario :titulo="'Gestion Departamento'" v-model:is-open="mostrarFormulario" :is-edit="editandoFormulario"  >
         <template #slotForm>
           <el-row :gutter="20">
             <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-          <formPaises   
+          <formDepartamento  
             v-model:is-open="mostrarFormulario" :is-edit="editandoFormulario"  
           />
         </el-col>
@@ -46,7 +46,8 @@
   <script lang="ts" setup>
   import { reactive, ref } from 'vue'
   import LayoutMain from '../../components/LayoutMain.vue';
-  import  formPaises from './components/formPaises.vue'
+  /*import formDepartamento from '../../views/departamento/componentes/formDepartamento.vue';*/
+  import  formDepartamento from './componentes/formDepartamento.vue';
   import Formulario from '../../components/Formulario.vue';
   import Header from '../../components/Header.vue';
   import  {Delete,Edit} from "@element-plus/icons-vue"

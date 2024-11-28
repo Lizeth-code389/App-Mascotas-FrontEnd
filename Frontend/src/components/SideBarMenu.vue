@@ -15,8 +15,10 @@
       </template>
 
       <el-menu-item index="personas">Personas</el-menu-item>
-      <el-menu-item index="cargos">Cargos</el-menu-item>
+      <el-menu-item index="departamento">Departamento</el-menu-item>
       <el-menu-item index="pais">Paises</el-menu-item>
+      <el-menu-item index="mascotas">Mascotas</el-menu-item>
+
     </el-sub-menu>
 
   </el-menu>
