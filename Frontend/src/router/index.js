@@ -5,6 +5,7 @@ import Paises from '../views/paises/paises.vue';
 import Cargos from '../views/cargos/Cargos.vue';
 import Departamento from '../views/departamento/Departamento.vue';
 import Mascotas from '../views/mascotas/Mascotas.vue';
+import Vacunas from "../views/vacunas/Vacunas.vue";
 import LayoutMain from "../components/LayoutMain.vue";
 import Login from "../components/Login.vue";
 
@@ -48,12 +49,19 @@ const routes = [
 
     },
 
-   /* {
-        path:'/ ',
-        name:'Municipio',
-        component: Municipio,
+    {
+        path:'/vacunas',
+        name:'Vacunas',
+        component: Vacunas,
 
-    }*/
+    }
+
+    /*{
+            path:'/mascotas',
+            name:'Mascotas',
+            component: Mascotas,
+    
+    },*/
 
 
 
