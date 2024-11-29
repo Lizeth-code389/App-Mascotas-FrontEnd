@@ -36,7 +36,7 @@
   
   .padded-button {
     padding: 20px;
-    background-color: #7f5af0;
+    background-color: #48b2d9;
     border: none;
     color: white;
   }

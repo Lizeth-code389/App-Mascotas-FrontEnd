@@ -53,7 +53,6 @@
   <script lang="ts" setup>
   import { reactive, ref } from 'vue'
   import LayoutMain from '../../components/LayoutMain.vue';
-  /*import formDepartamento from '../../views/departamento/componentes/formDepartamento.vue';*/
   import  formDepartamento from './componentes/formDepartamento.vue';
   import formMascotas from './componentes/formMascotas.vue';
   import Formulario from '../../components/Formulario.vue';

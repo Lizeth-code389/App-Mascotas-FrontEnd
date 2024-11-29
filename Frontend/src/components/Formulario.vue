@@ -90,7 +90,7 @@
   }
   
   .form-container__button-submit {
-    background-color: #2fbe98;
+    background-color: #c2acc9;
     border: none;
     color: white;
   }
