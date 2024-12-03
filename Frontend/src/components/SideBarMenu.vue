@@ -20,6 +20,7 @@
       <el-menu-item index="mascotas">Mascotas</el-menu-item>
       <el-menu-item index="vacunas">Vacunas</el-menu-item>
       <el-menu-item index="raza">Raza</el-menu-item>
+      <el-menu-item index="cargos">Cargos</el-menu-item>
       
       
       
