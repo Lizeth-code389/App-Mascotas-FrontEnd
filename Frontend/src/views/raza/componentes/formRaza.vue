@@ -59,7 +59,7 @@
     ],
     area: [
       {
-        required: false,
+        required: true,
         message: 'Seleccione un valor',
         trigger: 'blur',
       },

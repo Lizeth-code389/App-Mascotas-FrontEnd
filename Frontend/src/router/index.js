@@ -6,6 +6,7 @@ import Cargos from '../views/cargos/Cargos.vue';
 import Departamento from '../views/departamento/Departamento.vue';
 import Mascotas from '../views/mascotas/Mascotas.vue';
 import Vacunas from "../views/vacunas/Vacunas.vue";
+import Raza from "../views/raza/Raza.vue";
 import LayoutMain from "../components/LayoutMain.vue";
 import Login from "../components/Login.vue";
 
@@ -54,14 +55,14 @@ const routes = [
         name:'Vacunas',
         component: Vacunas,
 
-    }
+    },
 
-    /*{
-            path:'/mascotas',
-            name:'Mascotas',
-            component: Mascotas,
+    {
+            path:'/raza',
+            name:'Raza',
+            component: Raza,
     
-    },*/
+    }
 
 
 
