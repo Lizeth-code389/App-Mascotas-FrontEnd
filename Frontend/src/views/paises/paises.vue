@@ -8,7 +8,7 @@
       :abrir="abrirFormulario"
       />
       
-      <Formulario :titulo="'Gestion de Paises'" v-model:is-open="mostrarFormulario" :is-edit="editandoFormulario"  >
+      <Formulario :titulo="'Gestion de Paises'" v-model:is-open="mostrarFormulario" :is-edit="editandoFormulario" @save="guardarDatos" @update="actualizarDatos" >
         <template #slotForm>
           <el-row :gutter="20">
             <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
@@ -22,9 +22,9 @@
       </Formulario>      
 
       <el-table :data="pais" stripe style="width: 100%">
-                <el-table-column prop="codigo" label="codigo" />
-                <el-table-column prop="nombre" label="nombre" />
-                <el-table-column fixed="right" label="Acciones" min-width="120">
+                <el-table-column prop="codigo" label="Codigo" />
+                <el-table-column prop="nombre" label="Nombre" />
+                <el-table-column fixed="right" label="Actualizar" min-width="120">
                     <template #default="registro">
                         <el-button link type="primary" size="large" :icon="Edit"
                             @click="editarFormulario(registro.row.id)">
@@ -152,7 +152,7 @@ const actualizarPais = async () => {
 
 const datosById = async (id) => {
 
-    const url = 'http://127.0.0.1:8000/api/pais/datos'
+    const url = 'http://127.0.0.1:8000/api/pais/datosById'
 
     try {
         const response = axios.get(url, {

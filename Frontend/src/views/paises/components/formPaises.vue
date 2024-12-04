@@ -1,17 +1,12 @@
 <template>
   <el-form ref="formRef" style="max-width: 100%" :model="formulario" :rules="rulesForm" label-width="auto"
     :size="formSize" status-icon>
-    <el-form-item label="Codigo del Pais" prop="codigo">
-      <el-input v-model="formulario.nombre" />
+    <el-form-item label="Codigo" prop="codigo">
+      <el-input v-model.number="formulario.codigo" />
     </el-form-item>
-    <el-form-item label="Nombre " prop="nombre">
-      <el-input v-model="formulario.salario" />
-    </el-form-item>
+    
     <el-form-item label="Nombre" prop="nombre">
-      <el-select v-model="formulario.pais" placeholder="Seleccione un pais">
-        <el-option v-for="pais in pais" :key="pais.codigo" :label="pais.nombre" />
-
-      </el-select>
+        <el-input v-model="formulario.nombre"  :label="pais.nombre" />
     </el-form-item>
 
   </el-form>
@@ -50,7 +45,7 @@ const rulesForm = reactive({
   codigo: [
     { required: true, message: 'Por favor ingrese el codigo del pais', trigger: 'blur' },
   
-  {
+    {
       type: 'number',
       message: 'El código debe ser un número',
       trigger: 'blur',

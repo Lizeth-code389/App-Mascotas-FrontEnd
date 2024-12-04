@@ -1,7 +1,7 @@
 <template>
     <el-menu
       :default-active="activeIndex"
-      background-color="#16161a"
+      background-color="#FF1E1E1E"
       text-color="#fff"
       class="el-menu-demo"
       mode="horizontal"
@@ -10,8 +10,9 @@
     >
       <el-menu-item index="0">
         <img
-          style="width: 100px"
+          style="width: 250px"
           alt="Element logo"
+          src="../components/Logo2.png"
         />
       </el-menu-item>
      
