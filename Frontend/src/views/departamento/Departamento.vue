@@ -10,7 +10,7 @@
                   <el-row :gutter="20">
                       <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
                           <FormDepartamento v-model:is-open="mostrarFormulario" :is-edit="editandoFormulario" ref="formRef"
-                              :departamento="departamento" :dataValue="dataDepartamentoById" />
+                              :paises="paises" :dataValue="dataDepartamentoById" />
                       </el-col>
                   </el-row>
               </template>
@@ -55,6 +55,7 @@ const formRef = ref()
 const dataDepartamentoById = ref()
 
 const departamento = ref([])
+const paises = ref([])
 
 
 const abrirFormulario = () => {
@@ -82,14 +83,14 @@ const actualizarDatos = async () => {
   }
 }
 
-const creardepartamento = async () => {
+const creardepartamento = async () => {0
 
   const url = 'http://127.0.0.1:8000/api/Departamento/save'
 
   const dataFormulario = {
       codigo: formRef.value.formulario.codigo,
       nombre: formRef.value.formulario.nombre,
-      id_pais: formRef.value.formulario.pais
+      id_pais: formRef.value.formulario.idPais
   }
   try {
       axios.post(url, dataFormulario)
@@ -226,15 +227,15 @@ const datosDepartamento = async () => {
 
 }
 
-/*
-const getAreas = async () => {
 
-  const url = 'http://127.0.0.1:8000/api/areas/datos'
+const getPais = async () => {
+
+  const url = 'http://127.0.0.1:8000/api/pais/datos'
 
   try {
       axios.get(url)
           .then(function (response) {
-              areas.value = response.data.result
+            paises.value = response.data.result
              // console.log(response);
 
           })
@@ -249,10 +250,10 @@ const getAreas = async () => {
 
 
 
-}*/
+}
 
 onMounted(() => {
-  /*getAreas()*/
+  getPais()
   datosDepartamento()
 })
 
