@@ -10,7 +10,7 @@
                   <el-row :gutter="20">
                       <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
                           <FormMascotas v-model:is-open="mostrarFormulario" :is-edit="editandoFormulario" ref="formRef"
-                              :mascotas="mascotas" :dataValue="dataMascotasById" />
+                              :departamento="departamento" :dataValue="dataMascotasById" />
                       </el-col>
                   </el-row>
               </template>
@@ -21,10 +21,12 @@
               <el-table-column prop="nombre" label="nombre" />
               <el-table-column prop="edad" label="edad" />
               <el-table-column prop="sexo" label="sexo" />
+              <el-table-column prop="id_raza" label="raza" />
               <el-table-column prop="peso" label="peso" />
               <el-table-column prop="esterilizado" label="esterilizado" />
+              <el-table-column prop="id_departamento" label="departamento" />
               <el-table-column prop="descripcion" label="descripcion" />
-              <el-table-column prop="id_raza" label="raza" />
+              
               <el-table-column fixed="right" label="Acciones" min-width="120">
                   <template #default="registro">
                       <el-button link type="primary" size="large" :icon="Edit"
@@ -60,6 +62,8 @@ const formRef = ref()
 const dataMascotasById = ref()
 
 const mascotas = ref([])
+const departamento = ref([])
+const raza = ref([])
 
 
 const abrirFormulario = () => {
@@ -96,10 +100,12 @@ const crearMascota = async () => {
       nombre: formRef.value.formulario.nombre,
       edad: formRef.value.formulario.edad,
       sexo: formRef.value.formulario.sexo,
+      id_raza: formRef.value.formulario.idRaza,
       peso: formRef.value.formulario.peso,
       esterilizado: formRef.value.formulario.esterilizado,
       descripcion: formRef.value.formulario.descripcion,
-      id_raza: formRef.value.formulario.raza
+      id_departamento: formRef.value.formulario.idDepartamento,
+      
   }
   try {
       axios.post(url, dataFormulario)
@@ -132,10 +138,12 @@ const actualizarMascota = async () => {
       nombre: formRef.value.formulario.nombre,
       edad: formRef.value.formulario.edad,
       sexo: formRef.value.formulario.sexo,
+      id_raza: formRef.value.formulario.raza,
       peso: formRef.value.formulario.peso,
       esterilizado: formRef.value.formulario.esterilizado,
       descripcion: formRef.value.formulario.descripcion,
-      id_raza: formRef.value.formulario.raza
+      id_departamento: formRef.value.formulario.departamento,
+      
   }
   try {
       axios.put(url, dataFormulario)
@@ -226,7 +234,7 @@ const datosMascota = async () => {
       axios.get(url)
           .then(function (response) {
               mascotas.value = response.data.result
-             // console.log(response);
+             
 
           })
           .catch(function (error) {
@@ -234,15 +242,65 @@ const datosMascota = async () => {
           });
 
   } catch (error) {
-      console.error('error crear cargo ', error)
+      console.error('error crear al crear mascota ', error)
   }
 
 
 }
 
+const getDepartamento = async () => {
+
+const url = 'http://127.0.0.1:8000/api/Departamento/datos'
+
+try {
+    axios.get(url)
+        .then(function (response) {
+          departamento.value = response.data.result
+           
+
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+
+} catch (error) {
+    console.error('error al crear departamento ', error)
+}
+
+
+
+
+}
+
+const getRaza = async () => {
+
+const url = 'http://127.0.0.1:8000/api/Raza/datos'
+
+try {
+    axios.get(url)
+        .then(function (response) {
+          raza.value = response.data.result
+          
+
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+
+} catch (error) {
+    console.error('error al crear raza ', error)
+}
+
+
+
+
+}
+
+
 
 onMounted(() => {
-
+  getDepartamento()
+  getRaza()
   datosMascota()
 })
 
