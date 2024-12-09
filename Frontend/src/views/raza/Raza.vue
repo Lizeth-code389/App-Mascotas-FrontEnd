@@ -12,7 +12,8 @@
       <template #slotForm>
         <el-row :gutter="20">
           <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-        <FormRaza  
+
+        <FormRaza 
         v-model:is-open="mostrarFormulario" :is-edit="editandoFormulario" ref="formRef"
         :raza="raza" :dataValue="dataRazaById"/>
       </el-col>
@@ -51,6 +52,7 @@ import Header from '../../components/Header.vue';
 import  {Delete,Edit} from "@element-plus/icons-vue"
 import { ElMessage, ElMessageBox } from 'element-plus'
 import axios from 'axios';
+import FormRaza from './componentes/formRaza.vue';
 
 
 
