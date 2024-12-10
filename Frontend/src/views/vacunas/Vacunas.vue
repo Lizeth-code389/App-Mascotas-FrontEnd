@@ -22,6 +22,7 @@
       </Formulario>      
 
       <el-table :data="vacunas" stripe style="width: 100%">
+                <el-table-column prop="codigo" label="Codigo" />
                 <el-table-column prop="nombre" label="Nombre" />
                 <el-table-column prop="descripcion_vacuna" label="Descripcion_vacuna" />
                 <el-table-column fixed="right" label="Actualizar" min-width="120">
@@ -81,7 +82,7 @@ const guardarDatos = async () => {
 const actualizarDatos = async () => {
     const validacion = await formRef.value?.validarFormulario()
     if (validacion) {
-        await actualizarVacuna()
+        await actualizarVacunas()
     }
 }
 
@@ -103,7 +104,7 @@ const crearVacunas = async () => {
                     message: 'La vacuna se creo con exito    .',
                     type: 'success',
                 })
-                datosVacuna()
+                datosVacunas()
                 mostrarFormulario.value = false
 
             })
@@ -116,7 +117,7 @@ const crearVacunas = async () => {
     }
 }
 
-const actualizarVacuna = async () => {
+const actualizarVacunas = async () => {
  
     const url = 'http://127.0.0.1:8000/api/Vacuna/update'
 
@@ -136,7 +137,7 @@ const actualizarVacuna = async () => {
                     message: 'Fue  actualizo exitosamente    .',
                     type: 'success',
                 })
-                datosVacuna()
+                datosVacunas()
                 mostrarFormulario.value = false
 
             })
@@ -167,7 +168,7 @@ const datosById = async (id) => {
     }
 
 }
-const eliminarVacuna = async (id) => {
+const eliminarVacunas = async (id) => {
 
     const url = 'http://127.0.0.1:8000/api/Vacuna/delete'
 
@@ -185,7 +186,7 @@ const eliminarVacuna = async (id) => {
             try {
                 axios.delete(url, { data: { id } })
                     .then(function (response) {
-                        datosVacuna()
+                        datosVacunas()
 
                     })
                     .catch(function (error) {
@@ -208,7 +209,7 @@ const eliminarVacuna = async (id) => {
         })
 
 }
-const datosVacuna = async () => {
+const datosVacunas = async () => {
 
     const url = 'http://127.0.0.1:8000/api/Vacuna/datos'
 
@@ -233,7 +234,7 @@ const datosVacuna = async () => {
 
 onMounted(() => {
     /*getPais()*/
-    datosVacuna()
+    datosVacunas()
 })
 
 </script>

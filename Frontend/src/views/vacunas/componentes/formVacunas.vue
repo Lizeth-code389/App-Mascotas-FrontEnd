@@ -9,6 +9,10 @@
         <el-input v-model="formulario.nombre"  :label="Vacunas.nombre" />
     </el-form-item>
 
+    <el-form-item label="Descripción  Vacuna" prop="descripcion  vacuna">
+        <el-input v-model="formulario.descripcion_vacuna"  :label="Vacunas.descripcion_vacuna" />
+    </el-form-item>
+
   </el-form>
 </template>
 
@@ -30,6 +34,7 @@ const formRef = ref()
 const formulario = reactive({
   codigo: '',
   nombre: '',
+  descripcion_vacuna: '',
   
 
 })
@@ -38,6 +43,8 @@ const datosFormulario = () => {
 
   formulario.codigo = propiedad.dataValue[0].codigo;
   formulario.nombre = propiedad.dataValue[0].nombre;
+  formulario.descripcion_vacuna = propiedad.dataValue[0].descripcion_vacuna;
+  
   
 
 }
@@ -61,6 +68,16 @@ const rulesForm = reactive({
     },
   ],
   
+  descripcion_vacuna: [
+    { 
+      type:'text',
+      required: true, 
+      message: 'Por favor ingrese la descripcion de la vacuna',
+      trigger: 'blur',
+    },
+  ],
+
+
 })
 
 const limpiarFormulario = () => {

@@ -33,7 +33,7 @@
                           @click="editarFormulario(registro.row.id)">
                       </el-button>
                       <el-button link type="danger" :icon="Delete"
-                          @click="eliminarMascota(registro.row.id)"></el-button>
+                          @click="eliminarMascotas(registro.row.id)"></el-button>
                   </template>
               </el-table-column>
           </el-table>
@@ -81,18 +81,18 @@ const guardarDatos = async () => {
 
   const validacion = await formRef.value?.validarFormulario()
   if (validacion) {
-      await crearMascota()
+      await crearMascotas()
   }
 }
 
 const actualizarDatos = async () => {
   const validacion = await formRef.value?.validarFormulario()
   if (validacion) {
-      await actualizarMascota()
+      await actualizarMascotas()
   }
 }
 
-const crearMascota = async () => {
+const crearMascotas = async () => {0
 
   const url = 'http://127.0.0.1:8000/api/Mascota/save'
 
@@ -116,7 +116,7 @@ const crearMascota = async () => {
                   message: 'La mascota se creo con exito    .',
                   type: 'success',
               })
-              datosMascota()
+              datosMascotas()
               mostrarFormulario.value = false
 
           })
@@ -129,7 +129,7 @@ const crearMascota = async () => {
   }
 }
 
-const actualizarMascota = async () => {
+const actualizarMascotas = async () => {
 
   const url = 'http://127.0.0.1:8000/api/Mascota/update'
 
@@ -154,7 +154,7 @@ const actualizarMascota = async () => {
                   message: 'La mascota se actualizo con exito    .',
                   type: 'success',
               })
-              datosMascota()
+              datosMascotas()
               mostrarFormulario.value = false
 
           })
@@ -185,7 +185,7 @@ const datosById = async (id) => {
   }
 
 }
-const eliminarMascota = async (id) => {
+const eliminarMascotas = async (id) => {
 
   const url = 'http://127.0.0.1:8000/api/Mascota/delete'
 
@@ -203,7 +203,7 @@ const eliminarMascota = async (id) => {
           try {
               axios.delete(url, { data: { id } })
                   .then(function (response) {
-                      datosMascota()
+                      datosMascotas()
 
                   })
                   .catch(function (error) {
@@ -226,7 +226,7 @@ const eliminarMascota = async (id) => {
       })
 
 }
-const datosMascota = async () => {
+const datosMascotas = async () => {
 
   const url = 'http://127.0.0.1:8000/api/Mascota/datos'
 
@@ -301,7 +301,7 @@ try {
 onMounted(() => {
   getDepartamento()
   getRaza()
-  datosMascota()
+  datosMascotas()
 })
 
 </script>
